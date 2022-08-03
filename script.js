@@ -53,6 +53,23 @@ function generatePassword() {
     return "Please choose the characters you would like in your password.";
   };
 
+  //join value with string
+  if (wantsLowerCase) {
+    passwordString = passwordString.concat(lowercase_Char);
+  }
+
+  if (wantsUpperCase) {
+    passwordString = passwordString.concat(UPPERCASE_Char);
+  }
+
+  if (wantsNumbers) {
+    passwordString = passwordString.concat(numbers);
+  }
+
+  if (wantsSpecial) {
+    passwordString = passwordString.concat(special_Char);
+  }
+
 
 }
 
