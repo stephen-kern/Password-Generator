@@ -6,7 +6,7 @@ function generatePassword() {
   var UPPERCASE_Char = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   var lowercase_Char = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   var special_Char = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
-  
+  var passwordString = [];
 
   // Recieve the user input and validate it
   numberOfChar = prompt("How long would you like the password to be? Password must be 8 - 128 characters.");
@@ -70,14 +70,21 @@ function generatePassword() {
     passwordString = passwordString.concat(special_Char);
   }
 
+  //randomizing the characters for the password
+  let userPassword = ""
+  for (let i = 0; i < numberOfChar; i++) {
+    let rndm =[Math.floor(Math.random() * passwordString.length)];
 
-}
+    userPassword = userPassword + passwordString[rndm];
+  }
+
+  return userPassword;
+
+};
 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
-
-
 
 
 // Write password to the #password input
